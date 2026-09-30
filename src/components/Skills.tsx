@@ -39,7 +39,7 @@ export default function Skills() {
     <section
       id="skills"
       aria-labelledby="skills-heading"
-      className="mx-auto max-w-[1240px] px-4 sm:px-6"
+      className="mx-auto w-full max-w-[1240px] overflow-x-clip px-4 sm:px-6"
     >
       <div
         id="skills-heading"

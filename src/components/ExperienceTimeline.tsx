@@ -10,7 +10,7 @@ export default function ExperienceTimeline() {
     <section
       id="experience"
       aria-labelledby="experience-heading"
-      className="mx-auto max-w-[1240px] px-4 sm:px-6"
+      className="mx-auto w-full max-w-[1240px] px-4 sm:px-6"
     >
       <div
         id="experience-heading"

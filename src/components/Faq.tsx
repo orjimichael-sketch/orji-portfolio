@@ -13,7 +13,7 @@ export default function Faq() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section aria-labelledby="faq-heading" className="mx-auto max-w-[1240px] px-4 sm:px-6">
+    <section aria-labelledby="faq-heading" className="mx-auto w-full max-w-[1240px] px-4 sm:px-6">
       <div id="faq-heading" className="rounded-[var(--radius-card)] bg-card p-6 sm:p-10 lg:p-14">
         <SectionHeading eyebrow="FAQ" title="Frequently asked questions." />
 

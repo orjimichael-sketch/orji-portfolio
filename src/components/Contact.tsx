@@ -77,7 +77,7 @@ export default function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="mx-auto max-w-[1240px] px-4 sm:px-6"
+      className="mx-auto w-full max-w-[1240px] px-4 sm:px-6"
     >
       <div className="rounded-[var(--radius-card)] bg-card p-6 sm:p-10 lg:p-14">
         <div id="contact-heading">

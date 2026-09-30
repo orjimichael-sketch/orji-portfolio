@@ -41,7 +41,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section aria-labelledby="testimonials-heading" className="mx-auto max-w-[1240px] px-4 sm:px-6">
+    <section aria-labelledby="testimonials-heading" className="mx-auto w-full max-w-[1240px] px-4 sm:px-6">
       <div
         id="testimonials-heading"
         className="rounded-[var(--radius-card)] bg-canvas p-6 sm:p-10 lg:p-14"

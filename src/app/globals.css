@@ -98,6 +98,21 @@ body {
   animation-play-state: paused;
 }
 
+/* Project preview pan — hovering the frame slowly scrolls the tall
+   screenshot to reveal the full page. The image flows at container width
+   and overflows the clipped viewport; on hover it translates up by exactly
+   its overflow (own height minus container height, via cqh) so the bottom
+   of the page lands pixel-perfect for captures of any height. Pure CSS;
+   hover-capable wide screens only. */
+@container (min-width: 400px) and (hover: hover) {
+  .preview-viewport .preview-canvas {
+    transition: transform 6s ease-in-out;
+  }
+  .preview-viewport:hover .preview-canvas {
+    transform: translateY(calc(-100% + 100cqh));
+  }
+}
+
 /* ── Scroll reveal ────────────────────────────────────────────────────────── */
 
 [data-reveal] {

@@ -6,7 +6,7 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="mx-auto max-w-[1240px] px-4 sm:px-6"
+      className="mx-auto w-full max-w-[1240px] px-4 sm:px-6"
     >
       <div id="about-heading" className="rounded-[var(--radius-card)] bg-card p-6 sm:p-10 lg:p-14">
         <SectionHeading eyebrow={about.heading} title={about.title} />
