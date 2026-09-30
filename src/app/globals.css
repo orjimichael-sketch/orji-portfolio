@@ -1,26 +1,141 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Design tokens — light "card on canvas" system (Eloqwnt-style) ────────── */
+
+@theme {
+  /* Canvas: cool pale gray the white cards float on */
+  --color-canvas: #e8eaee;
+  --color-canvas-deep: #dfe2e7;
+
+  /* Surfaces */
+  --color-card: #ffffff;
+  --color-raised: #f3f4f6;
+
+  /* Ink */
+  --color-ink: #101114;
+  --color-body: #55585f;
+  --color-faint: #9a9da4;
+
+  /* Hairlines */
+  --color-line: #10111414;
+  --color-line-strong: #10111426;
+
+  /* Accent: black pills; ink on hover */
+  --color-accent: #101114;
+
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+
+  --tracking-caps: 0.14em;
+
+  --radius-card: 1.75rem;
+  --radius-card-sm: 1.25rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ── Base ─────────────────────────────────────────────────────────────────── */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  /* Anchored sections clear the fixed navbar. */
+  scroll-padding-top: 5.5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-ink);
+  color: #ffffff;
+}
+
+/* Quiet scrollbar that belongs to the theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: #c6c9cf;
+  border-radius: 5px;
+  border: 2px solid var(--color-canvas);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-faint);
+}
+
+/* One visible, consistent focus style everywhere */
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Shared micro-styles ──────────────────────────────────────────────────── */
+
+/* Section hairline */
+.rule {
+  border-top: 1px solid var(--color-line-strong);
+}
+
+/* Skills marquee — one slow loop, duplicated content, gap via padding */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 36s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Scroll reveal ────────────────────────────────────────────────────────── */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+[data-reveal="in"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* ── Reduced motion: content shows immediately, nothing moves ────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  /* The skills marquee keeps moving (slower) — it is decorative but
+     continuously visible, and the owner wants it in motion for everyone.
+     Everything else still freezes. */
+  .marquee-track {
+    animation-name: marquee !important;
+    animation-duration: 60s !important;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }

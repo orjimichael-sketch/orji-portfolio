@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Orji Michael — Portfolio
 
-## Getting Started
+Personal portfolio for Orji Michael, full-stack developer & digital professional.
+Single-page Next.js app in a light, card-based editorial style.
 
-First, run the development server:
+## Stack
+
+- **Next.js 16** (App Router) · React 19 · TypeScript
+- **Tailwind CSS v4** (design tokens in `src/app/globals.css`)
+- **Outfit** via `next/font` · inline SVG icons (no icon library)
+- **Resend** for contact-form email delivery
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Production:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Configuration
 
-## Learn More
+Copy `.env.example` → `.env.local` and set:
 
-To learn more about Next.js, take a look at the following resources:
+| Variable | Purpose |
+| --- | --- |
+| `RESEND_API_KEY` | Sends contact-form emails |
+| `CONTACT_TO_EMAIL` | Inbox that receives messages |
+| `CONTACT_FROM_EMAIL` | Optional verified sender identity |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Without these the form degrades gracefully with an honest "not configured" message.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Structure
 
-## Deploy on Vercel
+```
+src/
+  app/            # layout, page, api/contact, sitemap, robots, OG image, 404
+  components/     # one component per section + ui/ primitives
+  content/site.ts # SINGLE SOURCE OF TRUTH for all site content
+  lib/            # inline social icons
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To change anything shown on the site, edit `src/content/site.ts`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Before launch
+
+Work through **[CONTENT-CHECKLIST.md](./CONTENT-CHECKLIST.md)** — it lists every
+placeholder (email, socials, project links, screenshots, stats) and the sample
+testimonials that must be replaced with real quotes.
+
+## Design notes
+
+- Light "card on canvas" system: white rounded section cards on a pale gray field
+- `● Label` eyebrows, pill buttons, big display type (Outfit)
+- Reduced-motion and no-JS fallbacks keep all content accessible
+- SEO: metadata, canonical, JSON-LD `Person`, `sitemap.xml`, `robots.txt`, generated OG image
