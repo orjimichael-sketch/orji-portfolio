@@ -108,8 +108,10 @@ body {
   .preview-viewport .preview-canvas {
     transition: transform 6s ease-in-out;
   }
+  /* min() guards images shorter than the frame — pan distance can't go
+     positive, so they hold still instead of sliding blank space upward. */
   .preview-viewport:hover .preview-canvas {
-    transform: translateY(calc(-100% + 100cqh));
+    transform: translateY(min(0px, calc(-100% + 100cqh)));
   }
 }
 

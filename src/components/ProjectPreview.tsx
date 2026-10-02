@@ -24,8 +24,9 @@ export default function ProjectPreview({ project }: { project: Project }) {
           <i className="h-2 w-2 rounded-full bg-faint/60" />
           <i className="h-2 w-2 rounded-full bg-faint/60" />
         </span>
+        {/* Never fabricate a domain — projects without one get an honest label. */}
         <span className="ml-2 truncate text-[11px] tracking-wide text-faint">
-          {preview.domain ?? `${project.id.replace(/-/g, "")}.app`}
+          {preview.domain ?? "Live link coming soon"}
         </span>
       </div>
 

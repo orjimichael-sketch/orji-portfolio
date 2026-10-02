@@ -24,11 +24,11 @@ Search it for `PLACEHOLDER` to find every item below. Nothing else hardcodes con
 | What | Where | Notes |
 | --- | --- | --- |
 | ~~Elysian Market live URL~~ ✅ Done | `projects[0].links.live` → `https://elsyian-market.netlify.app` | "Visit site" link appears only when set |
-| Logistics Platform live URL | `projects[1].links.live` | "Visit site" link appears only when set |
+| ~~Logistics Platform live URL~~ ✅ Done | `projects[1].links.live` → `https://crownshine-logistics.vercel.app` + `preview.domain` | "Visit site" link and the browser-frame URL bar now show the real domain |
 | ~~Tech Quiz Platform live URL~~ ✅ Done | `projects[2].links.live` → `https://jsqu.netlify.app` | "Visit site" link appears only when set |
 | GitHub URLs | `projects[n].links.github` | "Source" link appears only when set — skipped for now per your choice |
 | ~~Elysian Market screenshot~~ ✅ Done | `public/projects/elysian-market.jpeg` + `projects[0].preview.image` | Tall full-page capture — pans on hover over the frame. Optimized: 1900w → 1200w mozjpeg q78 (1.63 MB → 152 KB, PSNR 37.2 dB); master stays in Downloads |
-| Logistics Platform screenshot | `public/projects/`, then `projects[1].preview.image` | Cards show an honest "Screenshot pending" slot until then |
+| ~~Logistics Platform screenshot~~ ✅ Done | `public/projects/logistics-platform.jpeg` + `projects[1].preview.image` | Re-cut to exact 4:3 (1200×900) so it fills the preview frame at every breakpoint: cropped to the clean hero (baked-in stats strip, OS watermark, and chat widget removed — **none of the client's stats were copied into the card**), bottom edge extended with sampled hero navy (invisible). Optimized: 1205×838 crop → 1200w mozjpeg q78 (108 KB, PSNR 35.7 dB); master stays in Pictures/Screenshots. URL bar shows "Live link coming soon" until the real domain is set |
 | ~~Tech Quiz Platform screenshot~~ ✅ Done | `public/projects/tech-quiz-platform.png` + `projects[2].preview.image` | Renamed to "J's Quiz" to match the product's real brand |
 | ~~Metro Tulip live URL~~ ✅ Done | `projects[3].links.live` → `https://metrotulip-website.netlify.app` | Fourth project card, "Hospitality" |
 | ~~Metro Tulip screenshot~~ ✅ Done | `public/projects/metrotulip.jpeg` + `projects[3].preview.image` | Tall full-page capture — pans on hover over the frame. Optimized: 1896w → 1200w mozjpeg q78 (3.36 MB → 268 KB, PSNR 36.9 dB); master stays in Downloads |

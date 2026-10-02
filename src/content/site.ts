@@ -194,10 +194,11 @@ export const projects: Project[] = [
   {
     id: "logistics-platform",
     index: "02",
-    name: "Logistics Platform",
+    // Real product name, from the product's own branding (see screenshot).
+    name: "Crown Shine Logistics",
     kind: "Delivery & tracking",
     description:
-      "A delivery platform where orders are booked, assigned, and tracked from pickup to destination.",
+      "A delivery platform for Crown Shine Logistics — shipments are booked, assigned, and tracked from pickup to destination across Nigeria.",
     role: "Full-Stack Development",
     tech: ["Next.js", "TypeScript", "Node.js", "APIs"],
     features: [
@@ -210,8 +211,13 @@ export const projects: Project[] = [
       { value: "Booking → door", label: "Tracked delivery flow" },
       { value: "Live status", label: "Backend-driven updates" },
     ],
-    links: {},
-    preview: {},
+    links: {
+      live: "https://crownshine-logistics.vercel.app",
+    },
+    preview: {
+      image: "/projects/logistics-platform.jpeg",
+      domain: "crownshine-logistics.vercel.app",
+    },
   },
   {
     id: "tech-quiz-platform",
