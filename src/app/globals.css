@@ -75,6 +75,14 @@ body {
   border-radius: 4px;
 }
 
+/* Exception — Jiggy form: the glass card is the only rounded box there,
+   so fields signal focus with a background shift instead of an extra
+   outlined rectangle. Scoped so the contact form keeps its outline. */
+section[data-jiggy-form] input:focus-visible,
+section[data-jiggy-form] input:focus {
+  outline: none;
+}
+
 /* ── Shared micro-styles ──────────────────────────────────────────────────── */
 
 /* Section hairline */
