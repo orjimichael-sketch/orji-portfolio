@@ -274,6 +274,64 @@ export const projects: Project[] = [
       domain: "metrotulip-website.netlify.app",
     },
   },
+  {
+    id: "aether-weather",
+    index: "05",
+    name: "Aether Weather",
+    kind: "Weather & live data",
+    description:
+      "A glassmorphic weather dashboard — search any city or use your location and it pulls live forecast data into a calm, readable interface: current conditions, an hourly strip, a week ahead, and the air you're breathing.",
+    role: "Front-End Development",
+    tech: ["React", "TypeScript", "Vite", "Open-Meteo API"],
+    features: [
+      "City search, saved favourites, and one-tap geolocation",
+      "Hourly strip, temperature trend chart, and 7-day outlook",
+      "Air quality, UV, wind, rain, and sun-position cards",
+      "Unit system and light/dark theme, remembered per device",
+    ],
+    stats: [
+      { value: "Front-End", label: "Role & build" },
+      { value: "Live data", label: "Open-Meteo · no API key" },
+      { value: "React + TS", label: "Primary stack" },
+    ],
+    links: {
+      live: "https://aether-weather.vercel.app",
+      github: "https://github.com/orjimichael-sketch/aether-weather",
+    },
+    preview: {
+      image: "/projects/weather-dashboard.png",
+      domain: "aether-weather.vercel.app",
+    },
+  },
+  {
+    id: "jiggy-login",
+    index: "06",
+    name: "Jiggy's Login Form",
+    kind: "Auth UI & motion",
+    description:
+      "A glassmorphism sign-in experience built as a double slider: login and sign-up sit side by side while a frosted panel slides over whichever half is inactive. On mobile it swaps one form at a time.",
+    role: "Front-End Development",
+    tech: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+    features: [
+      "Side-by-side login and sign-up with a sliding glass overlay",
+      "Password reveal toggle with accessible focus states",
+      "Shared easing across entrance, hover, and form-swap motion",
+      "Single-form layout with a slide swap on small screens",
+    ],
+    stats: [
+      { value: "Front-End", label: "Role & build" },
+      { value: "2 modes", label: "Login · sign-up" },
+      { value: "Motion", label: "Framer Motion transitions" },
+    ],
+    links: {
+      live: "https://jiggy-login.vercel.app",
+      github: "https://github.com/orjimichael-sketch/jiggy-login",
+    },
+    preview: {
+      image: "/projects/jiggy-login.png",
+      domain: "jiggy-login.vercel.app",
+    },
+  },
 ];
 
 /* ── About ───────────────────────────────────────────────────────────────── */

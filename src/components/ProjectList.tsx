@@ -12,8 +12,8 @@ export default function ProjectList() {
       <div id="work-heading" className="rounded-[var(--radius-card)] bg-card p-6 sm:p-10 lg:p-14">
         <SectionHeading
           eyebrow="Selected work"
-          title="Four products, built end to end."
-          description="Storefront, logistics, learning, and hospitality — each project covers the full path from data model to deployed interface."
+          title="Six products, built end to end."
+          description="Storefront, logistics, learning, hospitality, live data, and auth UI — each project covers the full path from data model to deployed interface."
         />
 
         <div className="mt-4">
